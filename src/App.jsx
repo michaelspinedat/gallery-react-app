@@ -1,8 +1,9 @@
 import React from 'react';
+import Gallery from './components/Gallery';
 
 const App = () => {
     return (
-        <h1>Gallery App</h1>
+        <Gallery />
     );
 };
 
