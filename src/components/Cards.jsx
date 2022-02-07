@@ -5,9 +5,9 @@ import Card from './Card';
 const Cards = ({ images }) => {
     console.log("Component: Cards");
     return (
-        <>
+        <div className="d-flex justify-content-around flex-wrap mt-5">
             {images.map(img => (<Card key={img.id} img={img.url} />))}
-        </>
+        </div>
     );
 };
 

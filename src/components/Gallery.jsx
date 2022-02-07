@@ -7,17 +7,16 @@ const Gallery = () => {
     const [search, setSearch] = useState("");
     const { data: images, loading } = useFetchImages(search);
 
-    const handleFormSubmit = (input) => {
-        console.log(input);
+    const handleFormSubmit = (input) => {        
         setSearch(input);
     }
 
     return (
-        <div className="container border">
-            <h1>Gallery App</h1>
+        <div className="container border mt-3">
+            <h1 style={{textAlign: "center"}}>Gallery App</h1>
             <GalleryForm onSubmit={handleFormSubmit} />
             {loading && <p>Cargando...</p>}
-            <Cards images={images} />
+            <Cards className="mt-1" images={images} />
         </div>
     );
 };

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const Card = ({ img }) => {
     return (
-        <div className="card" style={{ width: "18rem" }}>
-            <img src={img} className="card-img-top" alt="..." />
+        <div className="card" style={{ width: "18rem", height: "18rem" }}>
+            <img src={img} className="card-img-top" style={{ height: "100%", objectFit: "cover" }} alt="" />
         </div>
     );
 };

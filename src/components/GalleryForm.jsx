@@ -8,27 +8,36 @@ const GalleryForm = ({ onSubmit }) => {
     const handleChange = e => setInput(e.target.value);
 
     const handleSubmit = e => {
-        e.preventDefault();        
+        e.preventDefault();
         onSubmit(input);
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="px-3">
             <div className="mb-3">
                 <label htmlFor="search" className="form-label">
                     Encuentra tus imágenes favoritas
                 </label>
-                <input
-                    type="search"
-                    className="form-control"
-                    id="search"
-                    name="search"
-                    placeholder="Buscar"
-                    value={input}
-                    onChange={handleChange}
-                />
-            </div>
 
+                <div className="input-group mb-3">
+                    <input
+                        type="search"
+                        className="form-control"
+                        placeholder="Home"
+                        onChange={handleChange}
+                        value={input}
+                    />
+                    <button
+                        className="btn btn-outline-secondary"
+                        type="submit"
+                    >
+                        Buscar
+                    </button>
+                </div>
+
+
+
+            </div>
         </form>
     );
 };
