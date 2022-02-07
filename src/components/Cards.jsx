@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import Card from './Card';
 
 const Cards = ({ images }) => {
-
+    console.log("Component: Cards");
     return (
-
         <>
             {images.map(img => (<Card key={img.id} img={img.url} />))}
         </>

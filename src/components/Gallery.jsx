@@ -1,18 +1,22 @@
-import React, { useEffect } from 'react';
-import { getImages } from '../helpers/getImages';
+import React, { useState } from 'react';
 import { useFetchImages } from '../hooks/useFetchImages';
 import Cards from './Cards';
+import GalleryForm from './GalleryForm';
 
 const Gallery = () => {
-    console.log("Gallery component");
-    const { data: images, loading } = useFetchImages();
+    const [search, setSearch] = useState("");
+    const { data: images, loading } = useFetchImages(search);
+
+    const handleFormSubmit = (input) => {
+        console.log(input);
+        setSearch(input);
+    }
 
     return (
         <div className="container border">
             <h1>Gallery App</h1>
-
+            <GalleryForm onSubmit={handleFormSubmit} />
             {loading && <p>Cargando...</p>}
-
             <Cards images={images} />
         </div>
     );

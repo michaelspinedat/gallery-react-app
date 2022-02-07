@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getImages } from '../helpers/getImages';
 
-export const useFetchImages = () => {
+export const useFetchImages = (search) => {
 
-    console.log("custom hook");
+    console.log("useFetch: ", search);
 
     const [state, setState] = useState({
         data: [],
@@ -11,9 +11,9 @@ export const useFetchImages = () => {
     });
 
     useEffect(() => {
-        getImages()
+        getImages(search)
             .then(imgs => setState({ data: imgs, loading: false }));
-    }, []);
+    }, [search]);
 
     return state;
 };
